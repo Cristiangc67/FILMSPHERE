@@ -16,7 +16,7 @@ const ListItem = ({ image, name, rating, id }) => {
   return (
     <Link
       to={`/singleshow/${id}`}
-      className="z-[10] relative inline-block m-auto w-60 rounded-xl  hover:scale-105 transition-all"
+      className="z-[10] relative flex flex-col items-center justify-center m-auto w-full h-full md:w-60 rounded-xl  hover:scale-105 transition-all "
     >
       <div
         className={`flex justify-center items-center text-center rounded-full absolute w-8 h-8 ${ratingStyle(
@@ -25,7 +25,11 @@ const ListItem = ({ image, name, rating, id }) => {
       >
         <span>{rating}</span>
       </div>
-      <img src={image} alt={name} className=" rounded-lg h-[21rem] " />
+      <img
+        src={image}
+        alt={name}
+        className=" rounded-lg w-36 h-56 sm:h-[22rem] sm:w-full "
+      />
       <div className="flex flex-col text-start ps-1 py-2">
         <span className="text-xl font-bold text-slate-300">{name}</span>
       </div>

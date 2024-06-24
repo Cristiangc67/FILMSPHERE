@@ -54,7 +54,7 @@ const SingleShow = () => {
             />
             <div className="flex flex-col mt-10 ">
               <h2 className=" text-5xl text-slate-300">{singleShow.name}</h2>
-              <div className="flex flex-row gap-11 mt-5 ms-1">
+              <div className="flex flex-row gap-5 md:gap-11 mt-5 mx-auto md:ms-1">
                 <div className=" flex gap-3 ">
                   {singleShow.genres &&
                     singleShow.genres.map((genre) => (

@@ -21,7 +21,12 @@ const EpisodesItem = ({ image, summary, name, number }) => {
 
   return (
     <div className=" w-96 h-72  ">
-      <img className=" w-96 h-48" src={image ? image : ""} alt="" />
+      <img
+        className=" w-96 h-48"
+        loading="lazy"
+        src={image ? image : ""}
+        alt=""
+      />
       <p className="w-96 font-bold text-slate-300">
         E{number}:{name ? name : ""}
       </p>

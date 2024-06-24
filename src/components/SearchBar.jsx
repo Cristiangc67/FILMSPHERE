@@ -20,7 +20,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="my-10 px-32  w-full">
+    <div className="my-10 px-10 md:px-32  w-full">
       {alert ? <Alert message={alert.message} type={alert.type} /> : null}
 
       <form className=" w-full flex flex-col gap-5 " action="">

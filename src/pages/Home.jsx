@@ -17,7 +17,7 @@ const Home = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className=" grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-10 w-9/12 mx-auto my-4">
+        <div className=" grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 md:gap-10 w-9/12 mx-auto my-4 ">
           {shows.map((item) => (
             <ListItem
               key={item.show.id}
