@@ -89,7 +89,7 @@ const SingleShow = () => {
               ) : null}
             </div>
           </div>
-          <div className=" h-full w-full">
+          <div className=" flex justify-center h-full w-full">
             {episodes && <ListEpisodes episodes={episodes} />}
           </div>
         </section>

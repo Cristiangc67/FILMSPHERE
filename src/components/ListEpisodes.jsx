@@ -54,7 +54,7 @@ const ListEpisodes = ({ episodes }) => {
   };
 
   return (
-    <div className=" w-10/12 h-full mx-auto my-2 ">
+    <div className=" w-11/12 md:w-10/12 h-full mx-2 my-2 ">
       <div className="  h-20 w-full flex md:ms-28  ">
         {/* <div className=" bg-red-300 w-20 h-8 text-center rounded-b-lg">
           Season
@@ -74,7 +74,7 @@ const ListEpisodes = ({ episodes }) => {
         {episodes ? (
           <div
             id="arrowLeft"
-            className=" w-20 h-48  hover:cursor-pointer transition-all duration-300  hover:scale-110"
+            className="w-12 md:w-20 h-48  hover:cursor-pointer transition-all duration-300  hover:scale-110"
             onClick={scrollLeft}
           >
             <img src={arrowLeft} className="h-full w-full " alt="" />
@@ -104,7 +104,7 @@ const ListEpisodes = ({ episodes }) => {
         {episodes ? (
           <div
             id="arrowRight"
-            className="w-20 h-48 hover:cursor-pointer transition-all duration-300  hover:scale-110"
+            className="w-12 md:w-20 h-48 hover:cursor-pointer transition-all duration-300  hover:scale-110"
             onClick={scrollRight}
           >
             <img src={arrowRight} className="h-full w-full  " alt="" />
