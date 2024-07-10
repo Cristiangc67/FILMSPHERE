@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import EpisodesItem from "./EpisodesItem";
 import ShowsContext from "../context/shows/showsContext";
+import arrowLeft from "../assets/arrow-left.svg";
+import arrowRight from "../assets/right-arrow.svg";
 
 const ListEpisodes = ({ episodes }) => {
   const [seasonOption, setSeasonOption] = useState(1);
@@ -34,11 +36,26 @@ const ListEpisodes = ({ episodes }) => {
     }
     return seasonsArray;
   };
-  /* const showsContext = useContext(ShowsContext);
-  const { loading, getSingleShow, singleShow, episodes } = showsContext; */
+  //scroll control
+  const listScrollRef = useRef(null);
+  const scrollLeft = () => {
+    listScrollRef.current.scrollBy({
+      top: 0,
+      left: -500,
+      behavior: "smooth",
+    });
+  };
+  const scrollRight = () => {
+    listScrollRef.current.scrollBy({
+      top: 0,
+      left: 500,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className=" w-10/12 h-40 mx-auto mt-5 ">
-      <div className="  h-20 w-full flex  ">
+    <div className=" w-10/12 h-full mx-auto my-2 ">
+      <div className="  h-20 w-full flex md:ms-28  ">
         {/* <div className=" bg-red-300 w-20 h-8 text-center rounded-b-lg">
           Season
         </div> */}
@@ -53,19 +70,48 @@ const ListEpisodes = ({ episodes }) => {
           ""
         )}
       </div>
-      <div className=" w-full  h-80 overflow-x-scroll flex gap-9">
-        {episodes
-          ? seasonEpisodes.map((episode) => {
-              return (
-                <EpisodesItem
-                  image={episode.image ? episode.image.medium : ""}
-                  summary={episode.summary ? episode.summary : ""}
-                  name={episode.name ? episode.name : ""}
-                  number={episode.number ? episode.number : ""}
-                />
-              );
-            })
-          : ""}
+      <div className=" h-80 w-full flex">
+        {episodes ? (
+          <div
+            id="arrowLeft"
+            className=" w-20 h-48  hover:cursor-pointer transition-all duration-300  hover:scale-110"
+            onClick={scrollLeft}
+          >
+            <img src={arrowLeft} className="h-full w-full " alt="" />
+          </div>
+        ) : (
+          ""
+        )}
+
+        <div
+          id="listScroll"
+          className="w-full h-80 px-1 snap-x snap-mandatory   overflow-x-scroll  flex gap-9"
+          ref={listScrollRef}
+        >
+          {episodes
+            ? seasonEpisodes.map((episode) => {
+                return (
+                  <EpisodesItem
+                    image={episode.image ? episode.image.medium : ""}
+                    summary={episode.summary ? episode.summary : ""}
+                    name={episode.name ? episode.name : ""}
+                    number={episode.number ? episode.number : ""}
+                  />
+                );
+              })
+            : ""}
+        </div>
+        {episodes ? (
+          <div
+            id="arrowRight"
+            className="w-20 h-48 hover:cursor-pointer transition-all duration-300  hover:scale-110"
+            onClick={scrollRight}
+          >
+            <img src={arrowRight} className="h-full w-full  " alt="" />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

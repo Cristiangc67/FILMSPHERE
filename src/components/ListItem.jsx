@@ -16,7 +16,7 @@ const ListItem = ({ image, name, rating, id }) => {
   return (
     <Link
       to={`/singleshow/${id}`}
-      className="z-[10] relative flex flex-col items-center justify-center m-auto w-full h-full md:w-60 rounded-xl  hover:scale-105 transition-all "
+      className="z-[10]  relative flex flex-col items-start m-auto w-full h-full md:w-60 rounded-xl  hover:scale-105 transition-all duration-300 "
     >
       <div
         className={`flex justify-center items-center text-center rounded-full absolute w-8 h-8 ${ratingStyle(

@@ -20,9 +20,9 @@ const EpisodesItem = ({ image, summary, name, number }) => {
   };
 
   return (
-    <div className=" w-96 h-72  ">
+    <div className=" w-96 h-72 snap-center hover:bg-slate-600 rounded-lg  ">
       <img
-        className=" w-96 h-48"
+        className=" w-96 h-48 rounded-t-lg"
         loading="lazy"
         src={image ? image : ""}
         alt=""

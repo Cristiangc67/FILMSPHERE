@@ -37,14 +37,14 @@ const SingleShow = () => {
   console.log(singleShow);
 
   return (
-    <div className=" w-full pt-20 ">
+    <div className=" w-full h-auto  pt-20 ">
       {loading ? (
         <Loader />
       ) : (
-        <section className=" ">
-          <div className="flex flex-col md:flex-row  gap-20 w-9/12 md:justify-center m-auto">
+        <section className="w-full h-auto ">
+          <div className="w-9/12 h-auto lg:px-32  px-auto flex flex-col md:flex-row  gap-20  md:justify-center m-auto">
             <img
-              className=" w-96 self-center  md:h-96  md:w-64 rounded-xl"
+              className=" w-96 h-[36rem]  self-center  md:h-96  md:w-64 rounded-xl"
               src={
                 singleShow.image
                   ? singleShow.image.original
@@ -52,9 +52,9 @@ const SingleShow = () => {
               }
               alt=""
             />
-            <div className="flex flex-col mt-10 ">
+            <div className="flex flex-col mt-10 w-full h-full ">
               <h2 className=" text-5xl text-slate-300">{singleShow.name}</h2>
-              <div className="flex flex-row gap-5 md:gap-11 mt-5 mx-auto md:ms-1">
+              <div className="flex flex-row gap-5 md:gap-11 mt-5 md:ms-1  ">
                 <div className=" flex gap-3 ">
                   {singleShow.genres &&
                     singleShow.genres.map((genre) => (
@@ -83,14 +83,15 @@ const SingleShow = () => {
                 </span>
               </div>
               {singleShow.summary ? (
-                <p className=" lg:w-[50rem] mt-10  text-slate-300 md:mt-20 lg:mt-28">
+                <p className=" lg:w-[35rem] xl:w-[50rem] md:w-30 h-full mt-10  text-slate-300 md:mt-20 lg:mt-28">
                   {removeTags(singleShow.summary)}
                 </p>
               ) : null}
             </div>
           </div>
-
-          {episodes && <ListEpisodes episodes={episodes} />}
+          <div className=" h-full w-full">
+            {episodes && <ListEpisodes episodes={episodes} />}
+          </div>
         </section>
       )}
     </div>
