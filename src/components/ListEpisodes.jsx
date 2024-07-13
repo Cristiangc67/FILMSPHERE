@@ -70,7 +70,7 @@ const ListEpisodes = ({ episodes }) => {
           ""
         )}
       </div>
-      <div className="h-80 w-full flex ">
+      <div className=" h-full md:h-80 w-full flex ">
         {episodes ? (
           <div
             id="arrowLeft"
