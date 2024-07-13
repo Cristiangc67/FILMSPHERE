@@ -20,18 +20,18 @@ const EpisodesItem = ({ image, summary, name, number }) => {
   };
 
   return (
-    <div className=" w-full h-full md:w-96 md:h-72 p-2 flex md:block snap-center hover:bg-slate-600 rounded-lg hover:cursor-pointer ">
+    <div className=" w-full h-full md:w-96 md:h-72 p-2 flex items-center md:block snap-center hover:bg-slate-600 rounded-lg hover:cursor-pointer ">
       <img
-        className=" w-52 h-36 md:w-96 md:h-48 rounded-md"
+        className=" w-24 h-full md:w-96 md:h-48 rounded-md"
         loading="lazy"
         src={image ? image : ""}
         alt=""
       />
       <div className="ms-2 md:ms-0">
-        <p className=" w-full md:w-96 font-bold text-slate-300  ">
+        <p className=" w-full md:w-96 font-bold text-base text-slate-300  ">
           E{number}:{name ? name : ""}
         </p>
-        <p className=" w-full md:w-96 text-sm mt-2 text-slate-300">
+        <p className=" w-full md:w-96 text-xs mt-2 text-slate-300">
           {summary ? reduceText(removeTags(summary)) : ""}
         </p>
       </div>
