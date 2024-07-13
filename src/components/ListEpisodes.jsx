@@ -55,7 +55,7 @@ const ListEpisodes = ({ episodes }) => {
 
   return (
     <div className=" w-11/12 md:w-10/12 h-full mx-2 my-2 ">
-      <div className="  h-20 w-full flex md:ms-28  ">
+      <div className="  h-20 w-full flex flex-col md:flex-row md:ms-28  ">
         {/* <div className=" bg-red-300 w-20 h-8 text-center rounded-b-lg">
           Season
         </div> */}
@@ -70,11 +70,11 @@ const ListEpisodes = ({ episodes }) => {
           ""
         )}
       </div>
-      <div className=" h-80 w-full flex">
+      <div className="h-80 w-full flex ">
         {episodes ? (
           <div
             id="arrowLeft"
-            className="w-12 md:w-20 h-48  hover:cursor-pointer transition-all duration-300  hover:scale-110"
+            className="w-12 md:w-20 h-48 hidden md:block hover:cursor-pointer transition-all duration-300  hover:scale-110"
             onClick={scrollLeft}
           >
             <img src={arrowLeft} className="h-full w-full " alt="" />
@@ -85,7 +85,7 @@ const ListEpisodes = ({ episodes }) => {
 
         <div
           id="listScroll"
-          className="w-full h-80 px-1 snap-x snap-mandatory   overflow-x-scroll  flex gap-9"
+          className="w-full h-full px-1 snap-y md:snap-x snap-mandatory flex flex-col md:flex-row overflow-y-scroll md:overflow-x-scroll gap-9"
           ref={listScrollRef}
         >
           {episodes
@@ -104,7 +104,7 @@ const ListEpisodes = ({ episodes }) => {
         {episodes ? (
           <div
             id="arrowRight"
-            className="w-12 md:w-20 h-48 hover:cursor-pointer transition-all duration-300  hover:scale-110"
+            className="w-12 md:w-20 h-48 hidden md:block hover:cursor-pointer transition-all duration-300  hover:scale-110"
             onClick={scrollRight}
           >
             <img src={arrowRight} className="h-full w-full  " alt="" />

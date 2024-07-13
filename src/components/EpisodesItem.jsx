@@ -20,19 +20,21 @@ const EpisodesItem = ({ image, summary, name, number }) => {
   };
 
   return (
-    <div className=" w-48 h-36 md:w-96 md:h-72 snap-center hover:bg-slate-600 rounded-lg  ">
+    <div className=" w-full h-full md:w-96 md:h-72 p-2 flex md:block snap-center hover:bg-slate-600 rounded-lg hover:cursor-pointer ">
       <img
-        className=" w-96 h-48 rounded-t-lg"
+        className=" w-52 h-36 md:w-96 md:h-48 rounded-md"
         loading="lazy"
         src={image ? image : ""}
         alt=""
       />
-      <p className=" w-48 md:w-96 font-bold text-slate-300">
-        E{number}:{name ? name : ""}
-      </p>
-      <p className=" w-48 md:w-96 text-xs md:text-sm text-slate-300">
-        {summary ? reduceText(removeTags(summary)) : ""}
-      </p>
+      <div className="ms-2 md:ms-0">
+        <p className=" w-full md:w-96 font-bold text-slate-300  ">
+          E{number}:{name ? name : ""}
+        </p>
+        <p className=" w-full md:w-96 text-sm mt-2 text-slate-300">
+          {summary ? reduceText(removeTags(summary)) : ""}
+        </p>
+      </div>
     </div>
   );
 };
